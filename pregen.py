@@ -14,7 +14,10 @@ def main():
     with MCRcon(SERVER_ADRESS,password=PASSWORD ,port=PORT) as con:
         enabled = False
         while True:
-            time.sleep(PING_DELAY)
+            if enabled:
+                time.sleep(PING_DELAY/4)
+            else:
+                time.sleep(PING_DELAY)
             try:
                 resp = con.connect("list")
                 resp = resp[11:]
