@@ -2,8 +2,9 @@ version: "3"
 services:
   pinger-pregen:
     container_name: pinger-pregen
-    image: pregen:latest
+    image: pinger-pregen:latest
     build: .
+    restart: always
     env_file:
       - .env
       
