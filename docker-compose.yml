@@ -1,0 +1,9 @@
+version: "3"
+services:
+  pinger-pregen:
+    container_name: pinger-pregen
+    image: pregen:latest
+    build: .
+    env_file:
+      - .env
+      
